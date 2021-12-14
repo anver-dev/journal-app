@@ -1,22 +1,25 @@
 <template>
   <div class="d-flex justify-content-center">
-      <h1 class="align-self-center">
-          No hay nada seleccionado
-      </h1>
-      <Fab />
+    <h1 class="align-self-center">No hay nada seleccionado</h1>
+    <Fab @on:click="addEntry" />
   </div>
 </template>
 
 <script>
-import { defineAsyncComponent } from 'vue'
+import { defineAsyncComponent } from "vue";
 export default {
-    components: {
-        Fab: defineAsyncComponent(() => import('../components/Fab.vue'))
-    }
-}
+  components: {
+    Fab: defineAsyncComponent(() => import("../components/Fab.vue")),
+  },
+  methods: {
+    addEntry() {
+      this.$router.push({ name: "entry", params: { id: "new" } });
+    },
+  },
+};
 </script>
 <style lang="scss" scoped>
 div {
-    height: 100%;
-}   
+  height: 100%;
+}
 </style>
