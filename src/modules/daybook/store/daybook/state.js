@@ -1,4 +1,6 @@
 export default () => ({
-  isLoading: true,
-  entries: [],
+  status: 'authenticating',
+  user: null,
+  idToken: null,
+  refreshToken: null
 });
